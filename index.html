@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoWind AI</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:Arial, sans-serif;
+        background:#0f172a;
+        color:white;
+    }
+
+    header{
+        background:#111827;
+        padding:20px;
+        text-align:center;
+        font-size:32px;
+        font-weight:bold;
+        color:#38bdf8;
+    }
+
+    .hero{
+        text-align:center;
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        margin-bottom:20px;
+    }
+
+    .hero p{
+        font-size:20px;
+        color:#cbd5e1;
+        max-width:700px;
+        margin:auto;
+    }
+
+    .cards{
+        display:flex;
+        justify-content:center;
+        gap:20px;
+        flex-wrap:wrap;
+        padding:40px;
+    }
+
+    .card{
+        background:#1e293b;
+        width:300px;
+        padding:25px;
+        border-radius:20px;
+        transition:0.3s;
+        box-shadow:0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover{
+        transform:translateY(-5px);
+        background:#334155;
+    }
+
+    .card h2{
+        color:#38bdf8;
+    }
+
+    .ai-section{
+        padding:50px 20px;
+        text-align:center;
+    }
+
+    textarea{
+        width:80%;
+        max-width:700px;
+        height:120px;
+        border:none;
+        border-radius:15px;
+        padding:15px;
+        font-size:16px;
+        resize:none;
+        outline:none;
+    }
+
+    button{
+        margin-top:20px;
+        padding:15px 35px;
+        border:none;
+        border-radius:12px;
+        background:#38bdf8;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#0ea5e9;
+    }
+
+    .response{
+        margin-top:30px;
+        background:#1e293b;
+        padding:25px;
+        border-radius:15px;
+        max-width:700px;
+        margin-left:auto;
+        margin-right:auto;
+        display:none;
+        text-align:left;
+        line-height:1.7;
+    }
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#111827;
+        color:#94a3b8;
+        margin-top:40px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    EcoWind AI
+</header>
+
+<section class="hero">
+    <h1>Будущее ветровой энергии</h1>
+    <p>
+        Инновационные технологии и искусственный интеллект помогают
+        создавать более доступные и эффективные ветряные турбины.
+    </p>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h2>3D-печать</h2>
+        <p>
+            Турбины можно печатать прямо на месте установки,
+            что уменьшает стоимость перевозки.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>AI-анализ</h2>
+        <p>
+            Искусственный интеллект анализирует ветер и
+            эффективность работы турбин.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Экология</h2>
+        <p>
+            Ветровая энергия уменьшает выбросы CO₂
+            и помогает экологии планеты.
+        </p>
+    </div>
+
+</section>
+
+<section class="ai-section">
+
+    <h1>EcoWind AI Assistant</h1>
+
+    <textarea id="userInput" placeholder="Введите вопрос..."></textarea>
+    <br>
+    <button onclick="generateAI()">Сгенерировать AI-ответ</button>
+
+    <div class="response" id="responseBox"></div>
+
+</section>
+
+<footer>
+    EcoWind AI © 2026
+</footer>
+
+<script>
+
+function generateAI(){
+
+    const input = document.getElementById("userInput").value;
+    const responseBox = document.getElementById("responseBox");
+
+    let response = "";
+
+    if(input.toLowerCase().includes("ветер")){
+        response = "AI-анализ показывает высокий потенциал ветровой энергии в данном регионе. Рекомендуется установка турбин нового поколения.";
+    }
+    else if(input.toLowerCase().includes("турбин")){
+        response = "Искусственный интеллект рекомендует использовать 3D-печатные турбины для снижения затрат и повышения эффективности.";
+    }
+    else if(input.toLowerCase().includes("энерг")){
+        response = "AI прогнозирует рост использования возобновляемой энергии на 45% в ближайшие годы.";
+    }
+    else{
+        response = "EcoWind AI проанализировал запрос и рекомендует внедрение инновационных экологических технологий.";
+    }
+
+    responseBox.style.display = "block";
+    responseBox.innerHTML = response;
+
+}
+
+</script>
+
+</body>
+</html>
